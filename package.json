@@ -1,0 +1,23 @@
+{
+  "name": "catch-the-fruit-threejs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mourra950/Catch-The-Fruit-Threejs.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mourra950/Catch-The-Fruit-Threejs/issues"
+  },
+  "homepage": "https://github.com/mourra950/Catch-The-Fruit-Threejs#readme",
+  "dependencies": {
+    "three": "^0.147.0"
+  }
+}
