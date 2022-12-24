@@ -11,11 +11,16 @@ const geometry = new THREE.BoxGeometry( 1, 1, 1 );
 
 const material = new THREE.MeshBasicMaterial( {color: 0x00ff00} );
 const cube = new THREE.Mesh( geometry, material );
-cube.position.set(-2,4,0)
+cube.position.set(0,0,0)
 document.body.appendChild( renderer.domElement );
-camera.position.set(10,0,0);
-//camera.rotation(0,0,0);
-camera.lookAt(0,0,0);   
+camera.position.set(0,10,0);
+//camera.rotation.set(0,0,0);
+camera.lookAt(0,0,0); 
+//camera.rotation.set(0,90,0);
+
+
+
+
 
 scene.add( cube );
 scene.add(light);
@@ -26,7 +31,8 @@ console.log(sun)
 y=4
 function render()
 {
-    cube.position.y-=0.01;
+    cube.position.z-=0.01;
+//    cube.position.x-=0.01;
     requestAnimationFrame(render);
     renderer.render(scene,camera);
 }
