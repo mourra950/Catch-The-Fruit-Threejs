@@ -533,11 +533,35 @@ function hmrAcceptRun(bundle, id) {
 
 },{}],"dV6cC":[function(require,module,exports) {
 var _three = require("three");
-console.log(_three);
+const renderer = new _three.WebGLRenderer();
+renderer.setSize(window.innerWidth, window.innerHeight);
+renderer.setClearColor(0xffffff);
 const scene = new _three.Scene();
-const camera = new _three.OrthographicCamera();
-const light = new _three.AmbientLight();
-console.log("ahmed");
+const camera = new _three.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+const light = new _three.PointLight(0xFFE0BD, 2, 1000);
+const sun = new _three.HemisphereLight(0xffffff, 0xffffff, 1);
+const geometry = new _three.BoxGeometry(1, 1, 1);
+const material = new _three.MeshBasicMaterial({
+    color: 0x00ff00
+});
+const cube = new _three.Mesh(geometry, material);
+cube.position.set(-2, 4, 0);
+document.body.appendChild(renderer.domElement);
+camera.position.set(10, 0, 0);
+//camera.rotation(0,0,0);
+camera.lookAt(0, 0, 0);
+scene.add(cube);
+scene.add(light);
+scene.add(sun);
+renderer.render(scene, camera);
+console.log(sun);
+y = 4;
+function render() {
+    cube.position.y -= 0.01;
+    requestAnimationFrame(render);
+    renderer.render(scene, camera);
+}
+requestAnimationFrame(render);
 
 },{"three":"ktPTu"}],"ktPTu":[function(require,module,exports) {
 /**
