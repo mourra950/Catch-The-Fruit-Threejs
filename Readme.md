@@ -1,5 +1,7 @@
 
 # Catch Thre Fruit
+![image](https://user-images.githubusercontent.com/64339763/210290693-30a5b6e2-63e2-4571-aaa6-827b22de852c.png)
+
 This is a simple game implemented in JavaScript using the three.js library. In the game, the player must catch falling colored cubes (fruit) in a bowl using keyboard controls.
 
 ## How to Run
