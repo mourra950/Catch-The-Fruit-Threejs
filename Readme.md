@@ -1,11 +1,51 @@
-**Imports**
 
--   **THREE**: A library for creating and manipulating 3D graphics
+# Catch Thre Fruit
+This is a simple game implemented in JavaScript using the three.js library. In the game, the player must catch falling colored cubes (fruit) in a bowl using keyboard controls.
 
--   **OrbitControls**: An add-on for **THREE** that allows the user to
-    control the camera using orbit controls
+## How to Run
 
--   **GLTFLoader**: A loader for 3D models in the glTF format
+to make the project work you follow this steps.
+to initialize the npm environment
+
+```ssh
+npm init -y
+```
+
+to install parcel file project manager
+
+```ssh
+npm install parcel
+```
+
+to install threejs the 3D game/web engine
+
+```ssh
+npm install three
+```
+
+to install cannon-es the physics engine for collision and so
+
+```ssh
+npm install cannon-es
+```
+
+then you can deploy web page using parcel by excuting the following command in the terminal
+
+```ssh
+parcel ./src/index.html
+```
+## How to Play
+Use the left and right arrow keys to move the bowl left and right. Try to catch as many falling fruits as possible to score points. Be careful, though: if you let too many fruits fall past the bowl, you'll lose lives. When you run out of lives, the game is over.
+
+## Code Structure
+The code is organized into several main sections:
+
+* Initialization: This section sets up the renderer, scene, camera, and lights. It also initializes the 3D model loader and loads the bowl model.
+
+* Game loop: This section contains the main game loop, which updates the game state and renders the scene at each frame. The game loop is implemented using the requestAnimationFrame function, which ensures that the game runs at a consistent frame rate.
+
+* Event handlers: This section contains functions that handle user input and
+
 
 **Constants**
 
@@ -30,9 +70,6 @@
 -   **geometry**: An instance of the **THREE.BoxGeometry** class,
     representing the geometry of a cube
 
--   **sun**: An instance of the **THREE.HemisphereLight** class,
-    representing a light source that illuminates the scene from above
-
 **Variables**
 
 -   **bowl**: An object representing the bowl model
@@ -40,7 +77,7 @@
 -   **counter**: An integer representing the player\'s score
 
 -   **lives**: An integer representing the number of lives the player
-    has remaining
+    has remaining start with 3
 
 -   **game_on**: A boolean indicating whether the game is currently in
     progress (**1**) or has ended (**0**)
@@ -48,7 +85,7 @@
 -   **timer**: An integer representing the elapsed time in the game
 
 -   **cubearray**: An array of **THREE.Mesh** objects representing the
-    falling cubes
+    falling cubes(fruits)
 
 -   **n**: An integer representing the number of cubes currently in the
     scene
